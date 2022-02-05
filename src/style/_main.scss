@@ -36,18 +36,19 @@
   .containerExtra {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     height: 0;
-    width: 100vw;
+    width: 0;
     backdrop-filter: blur(5px);
     background-color: #111213aa;
     overflow: hidden;
-    transition: height 0.7s, opacity 0.4s;
+    border-radius: 50%;
+    transition: all 0.6s ease-in-out;
     opacity: 0;
     .listItem {
-      padding: 30px;
-      width: 100vw;
-      height: 100vh;
+      padding: calc(50vh + 30px) 0;
+      width: 200vw;
+      height: 200vh;
       overflow: auto;
       display: flex;
       flex-direction: column;
@@ -77,8 +78,12 @@
   }
   &.active {
     .containerExtra {
-      height: 100vh;
+      top: -50vh;
+      right: -50vw;
+      height: 200vh;
+      width: 200vw;
       opacity: 1;
+      // border-radius: 0;
     }
     .humBurger {
       z-index: 100;
