@@ -1,12 +1,6 @@
-const navMenu = document.querySelector("#navMenu")
 const navGap = document.querySelector("#navMenu .gap")
 const mainContainer = document.querySelector("#navMenu .containerMain")
 const extraContainer = document.querySelector("#navMenu .containerExtra .listItem")
-for (let item of mainContainer.querySelectorAll("a")) {
-  item.addEventListener("click", () => {
-    navMenu.classList.remove("active")
-  })
-}
 const fixNavLinks = () => {
   let gap = navGap.clientWidth
   if (!gap) {
