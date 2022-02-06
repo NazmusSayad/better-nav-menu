@@ -1,7 +1,24 @@
-const navGap = document.querySelector("#navMenu .gap")
-const mainContainer = document.querySelector("#navMenu .containerMain")
-const extraContainer = document.querySelector("#navMenu .containerExtra .listItem")
+const humBurgerClick = () => {
+  if (navMenu.classList.contains("active")) {
+    navMenu.classList.remove("active")
+    document.body.classList.remove("navActive")
+  } else {
+    navMenu.classList.add("active")
+    document.body.classList.add("navActive")
+  }
+}
+const navMenu = document.querySelector("#navMenu")
+const navGap = navMenu.querySelector(".gap")
+const mainContainer = navMenu.querySelector(".containerMain")
+const extraContainer = navMenu.querySelector(".containerExtra .listItem")
 let documentInnerWidth = innerWidth
+// -----------------------------------------------------
+for (let item of extraContainer.querySelectorAll("a")) {
+  item.addEventListener("click", () => {
+    navMenu.classList.remove("active")
+    document.body.classList.remove("navActive")
+  })
+}
 const fixNavLinks = () => {
   const currentWidth = innerWidth
   let gap = navGap.clientWidth
